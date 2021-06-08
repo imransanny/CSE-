@@ -1,0 +1,7 @@
+Product Details: 
+[Product ID = 1
+Product Name = im
+Product Price=21.0$
+Purchase Date = Thu Jun 03 01:03:17 GMT-08:00 2021
+Purchase Quantity = 2
+Purchased With = cash]
