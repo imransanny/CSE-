@@ -1,0 +1,154 @@
+
+package icecreammain;
+
+public class Icecream {
+    private String IcecreamType;
+   private String IcecreamCompany;
+    double IcecreamPrice;
+    Icecream(){
+        IcecreamPrice = 0;
+    }
+ /*    Icecream(){
+  //  Scanner diye pore nite hobe
+    Scanner input = new Scanner(System.in); 
+    String obj1,obj2;
+    double obj3;
+     obj1= input.nextLine();
+     obj2=input.nextLine();
+     obj3 = input.nextDouble();
+    IcecreamType = obj1;
+    IcecreamCompany = obj2; 
+    IcecreamPrice = obj3;
+}  */
+/*Icecream(String Type, String  Company, double Price){
+    IcecreamType = Type;
+    IcecreamCompany = Company; 
+    IcecreamPrice = Price;
+}
+*/
+void setIcecreamType(String Type){
+    IcecreamType = Type;
+}
+public String getIcecreamType(){
+    return IcecreamType;
+}
+void setIcecreamCompany(String Company){
+    IcecreamCompany = Company;
+}
+public String getIcecreamCompany(){
+    return IcecreamCompany; 
+}
+void setIcecreamPrice(double Price){
+    IcecreamPrice = Price;
+}
+public double getIcecreamPrice(){
+    return IcecreamPrice;
+}
+String tostring(){
+    return "\nIcecream Type ="+IcecreamType +"\nIcecream Company = "+IcecreamCompany+"\nIcecream Price = "+ IcecreamPrice ;
+}
+
+public boolean equals(Icecream o){
+    if( IcecreamPrice == o.getIcecreamPrice())
+       
+        return true;
+    else
+        return false;
+        
+}
+public int CompareTo(Icecream cprice){
+ if(IcecreamPrice > cprice.getIcecreamPrice()){
+     return 1;
+ }
+ else if (IcecreamPrice < cprice.getIcecreamPrice())
+            {
+return 0 ;
+            }
+            else{
+                    return -1;
+                    }
+}}
+
+
+
+
+
+package icecreammain;
+import java.util.*;
+public class IcecreamMain {
+      public static Icecream[]ary = new Icecream[5];
+      
+      public static void SearchByCompany(String Company){
+          for(int j=0 ; j<ary.length ; j++)
+          {
+            if(Company.equals(ary[j].getIcecreamCompany()))
+            {
+            System.out.println("\n\n"+ary[j].tostring());
+              }
+          }
+      }
+   
+      public static void main(String[] args) {
+      Icecream obj1, obj2, obj3;
+     // obj1= new Icecream();
+    //  obj2 = new Icecream ("cup", "iglo", 50.0);
+      obj1 = new Icecream();
+     obj1.setIcecreamType("Chocolate");
+      obj1.setIcecreamCompany("polar");
+    obj1.setIcecreamPrice(12.0);
+  
+    obj3 = new Icecream();
+     obj3.setIcecreamType("Stwarberries");
+      obj3.setIcecreamCompany("vanilla");
+    obj3.setIcecreamPrice(20);
+    obj1.equals(obj3);
+        System.out.println(obj1.tostring());
+     System.out.println(obj3.tostring());
+          System.out.println("Check price is equal ");
+        System.out.println(obj1.equals(obj3));
+       // System.out.println(obj1.tostring());
+       // System.out.println(obj2.tostring());
+
+       Scanner input= new Scanner(System.in);
+      for(int i=0 ; i<ary.length ; i++){
+           
+            ary[i] = new Icecream();
+          System.out.println("Icecream Type :");
+          ary[i].setIcecreamType(input.nextLine());
+          if(i==0){
+          //System.out.println("Press Enter.");
+          }
+          input.nextLine();
+          System.out.println("Icecream Company :");
+      ary[i].setIcecreamCompany(input.nextLine());
+          System.out.println("Icecream Price: "); 
+    
+       
+      ary[i].setIcecreamPrice(input.nextDouble());
+         // System.out.println(ary[i].tostring());
+    
+      }
+      //SearchByCompany("polar"); 
+     
+      System.out.println("\nwrite Search Company name:");
+         //String companyname; 
+           //companyname = input.nextLine();
+           input.nextLine();
+           System.out.println("Search for details : ");
+          SearchByCompany(input.nextLine());
+     
+          /*System.out.println("Check equal : ");
+         for(int i=0 ; i<3 ; i++){
+            
+             ary[i].equals(ary[i+1]);
+         
+          System.out.println(ary[i].tostring());
+     System.out.println(ary[i+1].tostring());
+        System.out.println(ary[i].equals(ary[i+1]));
+         } */         
+    
+      
+           
+          }
+      }
+    
